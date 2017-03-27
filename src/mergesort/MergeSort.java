@@ -40,7 +40,6 @@ public class MergeSort {
 		}
 
 		
-		
 	}
 
 	public void printDatas(int left, int right) {
