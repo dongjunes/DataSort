@@ -15,6 +15,8 @@ public class MergeSort {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
+		System.out.println();
+
 	}
 
 	public void mergeSort(int left, int right, int arr[]) {
@@ -23,6 +25,7 @@ public class MergeSort {
 			mid = (left + right) / 2;
 			mergeSort(left, mid, arr);
 			mergeSort(mid + 1, right, arr);
+
 			merge(left, mid, right, arr);
 		}
 	}
@@ -47,15 +50,22 @@ public class MergeSort {
 				sort[index] = arr[i];
 			}
 		} else {
-			for (int i = index; i <= right; i++) {
-				sort[i] = arr[lIndex++];
+			for (int i = lIndex; i <= mid; i++, index++) {
+				sort[index] = arr[i];
 			}
 		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println("--");
 
 		for (int i = left; i <= right; i++) {
 			arr[i] = sort[i];
 		}
-
+		for (int i = left; i < right; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println("----");
 	}
 
 	public static void main(String[] args) {
