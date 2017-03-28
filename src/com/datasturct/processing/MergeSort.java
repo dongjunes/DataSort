@@ -57,7 +57,6 @@ public class MergeSort {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
-		System.out.println("--");
 
 		for (int i = left; i <= right; i++) {
 			arr[i] = sort[i];
@@ -65,7 +64,6 @@ public class MergeSort {
 		for (int i = left; i < right; i++) {
 			System.out.print(arr[i] + " ");
 		}
-		System.out.println("----");
 	}
 
 	public static void main(String[] args) {
