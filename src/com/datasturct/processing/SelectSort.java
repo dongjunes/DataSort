@@ -4,34 +4,34 @@ import com.datasturct.mixing.Random;
 
 public class SelectSort {
 
-	public SelectSort() {
-		int arr[] = new int[100];
-		arr = Random.mixArray(arr);
-		printData(sorting(arr));
-	}
+    public SelectSort() {
+        int arr[] = new int[100];
+        arr = Random.mixArray(arr);
+        printData(sorting(arr));
+    }
 
-	public int[] sorting(int arr[]) {
-		int temp;
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = i + 1; j < arr.length; j++) {
-				if (arr[i] > arr[j]) {
-					temp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = temp;
-				}
-			}
-		}
+    public int[] sorting(int arr[]) {
+        int temp;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
 
-		return arr;
-	}
+        return arr;
+    }
 
-	public void printData(int arr[]) {
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
-	}
+    public void printData(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
 
-	public static void main(String[] args) {
-		new SelectSort();
-	}
+    public static void main(String[] args) {
+        new SelectSort();
+    }
 }
