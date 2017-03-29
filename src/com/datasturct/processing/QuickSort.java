@@ -17,24 +17,30 @@ public class QuickSort {
     }
 
     public void QuickSort(int arr[], int left, int right) {
-        if (left == right || left > right) {
-            int piv = partition(arr, left, right);
+        int piv = partition(arr, left, right);
+        if (left < right) {
+            QuickSort(arr, left, piv - 1);
+            QuickSort(arr, piv + 1, right);
         }
     }
 
     public int partition(int arr[], int left, int right) {
+        int row = left;
+        int high = right;
         int piv = arr[left - 1];
-        for (int i = left; i < right; i++) {
-            if (arr[i] < piv) {
-                int temp = arr[i];
-                arr[i] = piv;
-                piv = temp;
-                left++;
+        while (row < high) {
+            if (arr[row] < arr[piv]) {
+                row++;
+            } else if (arr[piv] < arr[high]) {
+                high--;
+            } else {
+                int temp = arr[row];
+                arr[row] = arr[high];
+                arr[high] = temp;
+                piv = row;
             }
         }
-
-
-        return left;
+        return piv;
     }
 
     public static void main(String args[]) {
